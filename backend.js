@@ -8,7 +8,7 @@ const fs = require('fs');
 const apiRouter = require('./backend/api');
 const app = express();
 
-const {BACKEND_PORT, REACT_APP_BACKEND_PORT, LAUNCH_BROWSER} = process.env;
+const {BACKEND_PORT, REACT_APP_BACKEND_PORT, LAUNCH_BROWSER, ALLOW_LISTEN} = process.env;
 
 const buildDir = fs.existsSync(path.join(__dirname, 'build')) ? 'build' : 'static';
 const port = REACT_APP_BACKEND_PORT || BACKEND_PORT || 23367;
@@ -34,6 +34,6 @@ const onListening = () => {
 };
 
 let server = http.createServer(app);
-server.listen(port);
+server.listen(port,ALLOW_LISTEN);
 server.on('error', onError);
 server.on('listening', onListening);
