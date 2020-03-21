@@ -4,7 +4,7 @@ Cloudflare provides an advanced DNS service with great API support. Suppose you 
 
 ## Use case
 
-I developed this for my own use to help in sharing resource from my laptop locally via LAN. Instead of having people type my local IP address, I can simply change some DNS entries (a subdomain I control) and have people easily access the more humane domain name to access my laptop (locally).
+I developed this for my own use to help in sharing resource from my laptop locally via LAN. Instead of having people type my local IP address, I can simply change some DNS entries (a subdomain I control) and have people easily access the more humane domain name to access my laptop (locally). 
 
 # What's this?
 
@@ -28,7 +28,7 @@ Note: this is developed and tested on Node 12.
 
 ## Configuration
 
-Create `.env` file following `example.env` and edit it to your Cloudflare credentials.
+Create `.env` file following `example.env` and edit it to your Cloudflare credentials. You will need your Cloudflare API key and Cloudflare account email address to  use this.
 
 ## Running
 
