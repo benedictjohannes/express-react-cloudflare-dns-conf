@@ -52,7 +52,7 @@ const rootFlexColStyle = {
 const acceptableDnsKeys = ['type', 'name', 'content'];
 
 const RecordDisplayer = props => {
-    const {records: fetchedRecords, updateRecord, id, addRecord} = props;
+    const {records: fetchedRecords, updateRecord, id, addRecord,refresh} = props;
     const setFetching = useContext(FetchContext);
     let [records, setRecords] = useState({...fetchedRecords});
     const updateRecords = (i, key) => {
@@ -106,7 +106,7 @@ const RecordDisplayer = props => {
             <div style={{...rootFlexRowStyle, height: 'unset', justifyContent: 'space-around'}}>
                 <button onClick={submit}>Submit</button>
                 <button onClick={resetRecords}>Reset</button>
-                <button>Refresh</button>
+                <button onClick={refresh} >Refresh</button>
             </div>
         </div>
     );
@@ -235,6 +235,7 @@ const App = props => {
                             records={data.find(row => row.id === currentId)}
                             updateRecord={updateSingleRecord}
                             addRecord={addRecord}
+                            refresh={() => fetchData(currentPage)}
                             id={currentId}
                         />
                     ) : (
